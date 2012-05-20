@@ -6,5 +6,6 @@ class Teacher < ActiveRecord::Base
   attr_accessor :password_confirmation
   attr_reader :password
   validate :password_must_be_present
-
+ 
+  has_many :theses
 end

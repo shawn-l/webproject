@@ -1,7 +1,13 @@
+#encoding: utf-8
 require 'test_helper'
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
+    @input_attributes = {
+      :stuId => '123',
+      :password => "private",
+      :password_confirmation => "private"
+    } 
     @student = students(:one)
   end
 
@@ -18,10 +24,14 @@ class StudentsControllerTest < ActionController::TestCase
 
   test "should create student" do
     assert_difference('Student.count') do
-      post :create, student: @student.attributes
+      post :create, :student => @input_attributes
     end
-
     assert_redirected_to student_path(assigns(:student))
+
+    mail = ActionMailer::Base.deliveries.first
+    assert_equal ["shawn413472212@gmail.com"], mail.to
+    assert_equal 'admin@webproject.com', mail[:from].value
+    assert_equal '用户等待验证', mail.subject
   end
 
   test "should show student" do
@@ -35,7 +45,7 @@ class StudentsControllerTest < ActionController::TestCase
   end
 
   test "should update student" do
-    put :update, id: @student.to_param, student: @student.attributes
+    put :update, :id => @student.to_param, :student => @input_attributes
     assert_redirected_to student_path(assigns(:student))
   end
 

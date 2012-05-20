@@ -2,6 +2,12 @@ require 'test_helper'
 
 class AdministratorsControllerTest < ActionController::TestCase
   setup do
+    @input_attributes = {
+      :adminId => "1",
+      :password => "private",
+      :password_confirmation => "private",
+      :email => "test@example.com"
+    } 
     @administrator = administrators(:one)
   end
 
@@ -18,7 +24,7 @@ class AdministratorsControllerTest < ActionController::TestCase
 
   test "should create administrator" do
     assert_difference('Administrator.count') do
-      post :create, administrator: @administrator.attributes
+      post :create, :administrator => @input_attributes 
     end
 
     assert_redirected_to administrator_path(assigns(:administrator))
@@ -35,7 +41,7 @@ class AdministratorsControllerTest < ActionController::TestCase
   end
 
   test "should update administrator" do
-    put :update, id: @administrator.to_param, administrator: @administrator.attributes
+    put :update, :id => @administrator.to_param, :administrator => @input_attributes
     assert_redirected_to administrator_path(assigns(:administrator))
   end
 

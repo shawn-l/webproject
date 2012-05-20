@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item:</b>
+  <%= @thesis.item %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @thesis.title %>
+</p>
+
+<p>
+  <b>Tchid:</b>
+  <%= @thesis.tchId %>
+</p>
+
+<p>
+  <b>Stuid:</b>
+  <%= @thesis.stuId %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @thesis.summary %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @thesis.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_thesis_path(@thesis) %> |
+<%= link_to 'Back', theses_path %>

@@ -1,6 +1,8 @@
 Webproject::Application.routes.draw do
-  resources :administrators
+  resources :theses
 
+  resources :administrators 
+  
   resources :teachers
 
   resources :students

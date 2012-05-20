@@ -40,10 +40,14 @@ class TeachersController < ApplicationController
   # POST /teachers
   # POST /teachers.json
   def create
+    params[:teacher][:state] = false
     @teacher = Teacher.new(params[:teacher])
 
     respond_to do |format|
       if @teacher.save
+        email = Thread.new{
+          Notifier.user_created.deliver
+        }
         format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
         format.json { render json: @teacher, status: :created, location: @teacher }
       else

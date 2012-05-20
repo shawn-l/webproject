@@ -1,0 +1,11 @@
+<ul>
+  <% @inactive_students.each do |student| %>
+    <li>Id:<%= student.stuId %> Name:<%= student.name %></li><
+  <% end %>
+</ul>
+<ul>
+  <% @inactive_teachers.each do |teacher| %>
+    <li>Id:<%= teacher.tchId%> Name:<%= teacher.name %></li>
+  <% end %>
+</ul>
+
