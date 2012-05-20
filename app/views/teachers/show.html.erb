@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tchid:</b>
+  <%= @teacher.tchId %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%= @teacher.hashed_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @teacher.salt %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @teacher.name %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @teacher.department %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @teacher.email %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @teacher.sex %>
+</p>
+
+
+<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Back', teachers_path %>

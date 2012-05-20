@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tchId: MyString
+  hashed_password: MyString
+  salt: MyString
+  name: MyString
+  department: MyString
+  email: MyString
+  sex: MyString
+
+two:
+  tchId: MyString
+  hashed_password: MyString
+  salt: MyString
+  name: MyString
+  department: MyString
+  email: MyString
+  sex: MyString

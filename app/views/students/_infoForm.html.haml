@@ -1,0 +1,23 @@
+= form_for(@student) do |f|
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+  .field
+    = f.label :majored
+    %br
+    = f.text_field :majored
+  .filed
+    = f.label :grade
+    %br
+    = f.text_field :grade
+  .field
+    = f.label :email
+    %br
+    = f.email_field :email
+  .field
+    = f.label :sex
+    = f.select :sex,["男","女"]
+  .actions
+    = f.submit
+

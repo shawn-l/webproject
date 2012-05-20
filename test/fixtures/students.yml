@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id:  2009051712 
+  hashed_password: MyString
+  salt: MyString
+  name: MyString
+  majored: MyString
+  grade: 
+  email: MyString
+  sex: 
+  state: false
+
+two:
+  id: MyString
+  hashed_password: MyString
+  salt: MyString
+  name: MyString
+  majored: MyString
+  grade: 
+  email: MyString
+  sex: 
+  state: false

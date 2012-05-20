@@ -1,4 +1,10 @@
 Webproject::Application.routes.draw do
+  resources :administrators
+
+  resources :teachers
+
+  resources :students
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
