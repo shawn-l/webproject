@@ -2,8 +2,6 @@
 
 one:
   tchId: MyString
-  hashed_password: MyString
-  salt: MyString
   name: MyString
   department: MyString
   email: MyString
@@ -11,9 +9,7 @@ one:
 
 two:
   tchId: MyString
-  hashed_password: MyString
-  salt: MyString
   name: MyString
   department: MyString
-  email: MyString
+  email: MyString1
   sex: MyString

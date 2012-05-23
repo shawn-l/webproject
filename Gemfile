@@ -37,3 +37,6 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'haml'
+
+gem 'devise'
+

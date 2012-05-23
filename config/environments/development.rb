@@ -24,6 +24,8 @@ Webproject::Application.configure do
     :password => "1123581321abcd",
     :enable_starttls_auto => true
   }
+  # devise plugin need to do
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

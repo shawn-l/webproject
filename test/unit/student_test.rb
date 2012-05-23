@@ -9,6 +9,7 @@ class StudentTest < ActiveSupport::TestCase
                           :password => '123456',
                           :password_confirmation => '123456',
                          )
+    assert_equal('2009051234',student.stuId)
     assert_equal(true,student.save)
   end
   

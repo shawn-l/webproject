@@ -1,4 +1,7 @@
 class TeachersController < ApplicationController
+ 
+
+  
   # GET /teachers
   # GET /teachers.json
   def index
@@ -84,4 +87,6 @@ class TeachersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+
 end
