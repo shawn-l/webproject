@@ -11,15 +11,14 @@
 </p>
 
 <p>
-  <b>Summary:</b>
-  <%= @thesis.summary %>
+<b>Summary:</b><br />
+  <%= sanitize( @thesis.summary) %>
 </p>
 
 <p>
   <b>Content:</b>
-  <%= @thesis.content %>
+  <%= sanitize( @thesis.content) %>
 </p>
-
 
 <%= link_to 'Edit', edit_thesis_path(@thesis) %> |
 <%= link_to 'Back', theses_path %>

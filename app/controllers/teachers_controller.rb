@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
- 
+ include Devise::TestHelpers 
 
   
   # GET /teachers

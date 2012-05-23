@@ -40,3 +40,8 @@ gem 'haml'
 
 gem 'devise'
 
+gem 'rails_kindeditor', '~>0.3.0'
+
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+

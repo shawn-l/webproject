@@ -2,4 +2,7 @@
 <%= @teacher.tchId %>
 <%= @teacher.email %><br />
 <%= link_to 'Logout', destroy_teacher_session_path, :method => :delete %><br />
+<% @teacher.theses.each do |thesis| %>
+  <p><%= link_to thesis.item, thesis %>,<%= thesis.title %></p>
+<% end %> 
 <%= link_to 'Add New Thesis', new_thesis_path %>

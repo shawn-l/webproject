@@ -1,5 +1,5 @@
 class ThesesController < ApplicationController
-  before_filter :authenticate_teacher!
+  before_filter :authenticate_teacher!, :only => ['new', 'create']
   # GET /theses
   # GET /theses.json
   def index
@@ -43,8 +43,10 @@ class ThesesController < ApplicationController
   def create
     @thesis = Thesis.new(params[:thesis])
 
+
     respond_to do |format|
       if @thesis.save
+        current_teacher.theses << @thesis
         format.html { redirect_to @thesis, notice: 'Thesis was successfully created.' }
         format.json { render json: @thesis, status: :created, location: @thesis }
       else
@@ -58,7 +60,12 @@ class ThesesController < ApplicationController
   # PUT /theses/1.json
   def update
     @thesis = Thesis.find(params[:id])
-
+    html = "Item:#{@thesis.item}<br />"
+    html << "Title:#{@thesis.title}<br />"
+    html << @thesis.summary
+    html << @thesis.content
+    kit = PDFKit.new(html, :page_size => 'Letter')
+    kit.to_file('pdf/thesis.pdf')   
     respond_to do |format|
       if @thesis.update_attributes(params[:thesis])
         format.html { redirect_to @thesis, notice: 'Thesis was successfully updated.' }

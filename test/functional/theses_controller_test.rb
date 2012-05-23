@@ -20,7 +20,6 @@ class ThesesControllerTest < ActionController::TestCase
     assert_difference('Thesis.count') do
       post :create, thesis: @thesis.attributes
     end
-
     assert_redirected_to thesis_path(assigns(:thesis))
   end
 
