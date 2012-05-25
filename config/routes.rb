@@ -6,7 +6,11 @@ Webproject::Application.routes.draw do
   get "home/student"
 
 
-  resources :theses
+  resources :theses do
+    member do
+      get 'download'
+    end
+  end
 
   resources :administrators 
   

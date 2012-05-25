@@ -7,6 +7,7 @@ class ThesisTest < ActiveSupport::TestCase
   test "create thesis" do
     thesis = Thesis.new(:item => 1,
                         :title => "text",
+                        :major => 'emjor',
                         :summary => "just a test",
                         :content => "test",
                         :student => students(:one),
@@ -15,5 +16,6 @@ class ThesisTest < ActiveSupport::TestCase
                        
     assert_equal('MyString',thesis.teacher.tchId)
     assert_equal('MyString',thesis.student.stuId)
+    assert_equal('emjor',thesis.major)
    end 
 end

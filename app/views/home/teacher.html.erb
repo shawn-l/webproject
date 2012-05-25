@@ -2,7 +2,25 @@
 <%= @teacher.tchId %>
 <%= @teacher.email %><br />
 <%= link_to 'Logout', destroy_teacher_session_path, :method => :delete %><br />
-<% @teacher.theses.each do |thesis| %>
-  <p><%= link_to thesis.item, thesis %>,<%= thesis.title %></p>
-<% end %> 
+<table id="theses" class="display" > 
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Title</th>
+      <th>Major</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @theses.each do |thesis| %>
+    <tr>
+      <td><%= link_to thesis.item, thesis %></td>
+      <td><%= thesis.title %></td>
+      <td><%= thesis.major %></td>
+      <td><%= link_to "download", url_for(:action => 'download', :controller =>'theses', :id => thesis.id )%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Add New Thesis', new_thesis_path %>

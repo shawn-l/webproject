@@ -36,7 +36,7 @@ class ThesesControllerTest < ActionController::TestCase
   test "should update thesis" do
     put :update, id: @thesis.to_param, thesis: @thesis.attributes
     assert_redirected_to thesis_path(assigns(:thesis))
-  end
+   end
 
   test "should destroy thesis" do
     assert_difference('Thesis.count', -1) do

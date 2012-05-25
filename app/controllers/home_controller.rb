@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   def teacher
     @teacher = current_teacher
+    @theses = @teacher.theses
   end
 
   def student

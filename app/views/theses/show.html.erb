@@ -12,13 +12,13 @@
 
 <p>
 <b>Summary:</b><br />
-  <%= sanitize( @thesis.summary) %>
+<%= sanitize @thesis.summary, :attributes => %w(id class style) %>
 </p>
 
 <p>
   <b>Content:</b>
-  <%= sanitize( @thesis.content) %>
+  <%= sanitize @thesis.content, :attributes => %w(id class style) %>
 </p>
-
-<%= link_to 'Edit', edit_thesis_path(@thesis) %> |
+<%= link_to 'Edit', edit_thesis_path(@thesis) %> 
 <%= link_to 'Back', theses_path %>
+<%= link_to 'download', url_for(:action => 'download', :id => @thesis.id ) %> 

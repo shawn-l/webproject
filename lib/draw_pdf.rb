@@ -4,7 +4,7 @@ class DrawPdf
     html << "Title:#{thesis.title}<br />"
     html << thesis.summary
     html << thesis.content
-    kit = PDFKit.new(html)
-    kit.to_file('pdf/thesis.pdf')
+    kit = PDFKit.new(html, :page_size => 'Letter')
+    kit.to_file("pdf/thesis#{thesis.id}.pdf")   
   end
 end

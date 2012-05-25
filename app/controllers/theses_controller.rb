@@ -60,12 +60,7 @@ class ThesesController < ApplicationController
   # PUT /theses/1.json
   def update
     @thesis = Thesis.find(params[:id])
-    html = "Item:#{@thesis.item}<br />"
-    html << "Title:#{@thesis.title}<br />"
-    html << @thesis.summary
-    html << @thesis.content
-    kit = PDFKit.new(html, :page_size => 'Letter')
-    kit.to_file('pdf/thesis.pdf')   
+    DrawPdf.draw(@thesis)
     respond_to do |format|
       if @thesis.update_attributes(params[:thesis])
         format.html { redirect_to @thesis, notice: 'Thesis was successfully updated.' }
@@ -87,5 +82,9 @@ class ThesesController < ApplicationController
       format.html { redirect_to theses_url }
       format.json { head :ok }
     end
+  end
+  #get /theses/1/download
+  def download
+    send_file("pdf/thesis#{params[:id]}.pdf")
   end
 end
