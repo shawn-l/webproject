@@ -8,6 +8,7 @@ class Teacher < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :tchId, :email, :password, :password_confirmation, :remember_me
+  validates :tchId, :presence => true, :uniqueness => true
   attr_accessor :login
   attr_accessible :login
 

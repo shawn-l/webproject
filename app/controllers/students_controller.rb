@@ -85,4 +85,11 @@ class StudentsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  # get /student/1/choice_the_thesis
+  def choice_the_thesis
+    @student = Student.find(params[:id])
+    @theses = Thesis.find_all_by_major(@student.majored)
+  end
+
 end

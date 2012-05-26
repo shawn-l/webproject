@@ -1,7 +1,8 @@
-<h2>Teacher Sign in</h2>
+<h2>Student Sign in</h2>
+
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :login%><br />
-  <%= f.text_field :login%></div>
+  <div><%= f.label :login %><br />
+  <%= f.text_field :login %></div>
 
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>

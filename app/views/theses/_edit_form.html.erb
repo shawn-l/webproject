@@ -5,7 +5,7 @@
  Title<%= @thesis.title %>
 </div>
 <div >
-  Summaryi<%= @thesis.summary %>
+  Summaryi<%= sanitize @thesis.summary, :attributes => %w(id class style) %>
 </div>
 <%= form_for(@thesis) do |f| %>
   <% if @thesis.errors.any? %>

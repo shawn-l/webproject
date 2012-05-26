@@ -1,2 +1,16 @@
-<h1>Home#student</h1>
-<p>Find me in app/views/home/student.html.erb</p>
+<h2>Student Page</h2>
+<%= link_to 'logout',destroy_student_session_path, :method => :delete %><br /> 
+<% if @thesis.nil? %>
+<%= link_to 'choice the thesis', choice_the_thesis_student_path(@student) %>
+<% else %>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>edit</th>
+    </tr>
+    <tr>
+      <th><%= @thesis.item %></th>
+      <th><%= link_to 'edit', edit_thesis_path(@thesis) %></th> 
+    </tr>
+  </table>
+<% end %>

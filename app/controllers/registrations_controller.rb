@@ -17,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
   protected
   def after_sign_up_path_for(resource)
-    teachers_url
+    home_guest_path
   end
 
 end

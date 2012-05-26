@@ -1,5 +1,6 @@
 class ThesesController < ApplicationController
   before_filter :authenticate_teacher!, :only => ['new', 'create']
+  before_filter :authenticate_student!, :only => ["update"]
   # GET /theses
   # GET /theses.json
   def index
@@ -60,7 +61,6 @@ class ThesesController < ApplicationController
   # PUT /theses/1.json
   def update
     @thesis = Thesis.find(params[:id])
-    DrawPdf.draw(@thesis)
     respond_to do |format|
       if @thesis.update_attributes(params[:thesis])
         format.html { redirect_to @thesis, notice: 'Thesis was successfully updated.' }
@@ -85,6 +85,16 @@ class ThesesController < ApplicationController
   end
   #get /theses/1/download
   def download
+    File.new("pdf/thesis#{params[:id]}.pdf","w").close
+    DrawPdf.draw(Thesis.find(params[:id]))
     send_file("pdf/thesis#{params[:id]}.pdf")
+    File.delete "pdf/thesis#{params[:id]}.pdf"
+  end
+
+  def student
+    thesis = Thesis.find(params[:id])
+    thesis.student_id = params[:student]
+    thesis.save
+    redirect_to student_page_url
   end
 end

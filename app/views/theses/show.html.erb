@@ -17,7 +17,7 @@
 
 <p>
   <b>Content:</b>
-  <%= sanitize @thesis.content, :attributes => %w(id class style) %>
+  <%= sanitize @thesis.content,:attributes => %(id class style src) %>
 </p>
 <%= link_to 'Edit', edit_thesis_path(@thesis) %> 
 <%= link_to 'Back', theses_path %>

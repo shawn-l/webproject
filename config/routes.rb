@@ -1,14 +1,17 @@
 Webproject::Application.routes.draw do
+ 
+
   get "home/guest"
 
   get "/teacher_page" => 'home#teacher'
 
-  get "home/student"
+  get "/student_page"  => 'home#student'
 
 
   resources :theses do
     member do
       get 'download'
+      post 'student'
     end
   end
 
@@ -18,8 +21,12 @@ Webproject::Application.routes.draw do
   resources :teachers  
   
  
-
-  resources :students
+  devise_for :students, :controllers => {:registrations => "registrations" }
+  resources :students do
+    member do
+      get  'choice_the_thesis'
+    end
+  end
 
 
   # The priority is based upon order of creation:
