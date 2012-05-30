@@ -1,12 +1,4 @@
-<div >
-  Item<%= @thesis.item %>
-</div>
-<div >
- Title<%= @thesis.title %>
-</div>
-<div >
-  Summaryi<%= sanitize @thesis.summary, :attributes => %w(id class style) %>
-</div>
+
 <%= form_for(@thesis) do |f| %>
   <% if @thesis.errors.any? %>
     <div id="error_explanation">
@@ -19,10 +11,18 @@
       </ul>
     </div>
   <% end %>
+  <header>
+    <h3>题目：<%= @thesis.title %></h3>
+  </header>
 
+  <h4>简介</h4>
+  <div>
+    Summaryi<%= sanitize @thesis.summary, :attributes => %w(id class style) %>
+  </div>
+  
+  <h4>正文</h4>
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.kindeditor :content, :width=>700, :height => 600,:resizeType => 0%>
+    <%= f.kindeditor :content, :width=> 660, :height => 600,:resizeType => 0%>
   </div>
 
   <div class="actions">

@@ -1,6 +1,5 @@
 class ThesesController < ApplicationController
   before_filter :authenticate_teacher!, :only => ['new', 'create']
-  before_filter :authenticate_student!, :only => ["update"]
   # GET /theses
   # GET /theses.json
   def index
@@ -27,7 +26,7 @@ class ThesesController < ApplicationController
   # GET /theses/new.json
   def new
     @thesis = Thesis.new
-
+    @teacher = current_teacher
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @thesis }
@@ -48,7 +47,7 @@ class ThesesController < ApplicationController
     respond_to do |format|
       if @thesis.save
         current_teacher.theses << @thesis
-        format.html { redirect_to @thesis, notice: 'Thesis was successfully created.' }
+        format.html { redirect_to teacher_page_path, notice: 'Thesis was successfully created.' }
         format.json { render json: @thesis, status: :created, location: @thesis }
       else
         format.html { render action: "new" }
@@ -79,7 +78,7 @@ class ThesesController < ApplicationController
     @thesis.destroy
 
     respond_to do |format|
-      format.html { redirect_to theses_url }
+      format.html { redirect_to teacher_page_path }
       format.json { head :ok }
     end
   end

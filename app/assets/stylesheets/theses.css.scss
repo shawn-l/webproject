@@ -1,3 +1,32 @@
 // Place all the styles related to the theses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+form {
+  font-family: Georgia,serif;
+  font-size: 12px;
+  color: #999;
+}
+form label {
+  font-family:Verdana,sans-serif;
+  font-weight:bold;
+  color:#660000;
+}
+form fieldset {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius:10px;
+  padding: 10px 5px;
+}
+form legend {
+  font-family: arial,sans-serif;
+  font-weight: bold;
+  font-size: 90%;
+  color: #666;
+  background:#eee;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius:10px;
+  border-bottom-color: #999;
+  border-right-color: #999;
+  padding:4px 8px;
+}

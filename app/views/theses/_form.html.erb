@@ -11,23 +11,22 @@
     </div>
   <% end %>
 
+  <fieldset>
+    <legend>新建论文</legend>
   <div class="field">
-    <%= f.label :item %>
-    <%= f.number_field :item %>
-  </div>
-  <div class="field">
-    <%= f.label :title %>
+    <%= f.label "题目" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :major %>
+    <%= f.label "适用专业" %><br />
     <%= f.text_field :major %>
   </div>
   <div class="field">
-    <%= f.label :summary %><br />
+    <%= f.label "简介" %><br />
     <%= f.kindeditor :summary, :width=>700, :heigh => 300,:resizeType => 0%>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+</fieldset>
 <% end %>

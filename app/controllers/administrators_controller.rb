@@ -14,7 +14,8 @@ class AdministratorsController < ApplicationController
   # GET /administrators/1.json
   def show
     @administrator = Administrator.find(params[:id])
-
+    @inactive_teachers = Teacher.find_all_by_state(false)
+    @inactive_students = Student.find_all_by_state(false)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @administrator }
@@ -79,5 +80,15 @@ class AdministratorsController < ApplicationController
       format.html { redirect_to administrators_url }
       format.json { head :ok }
     end
+  end
+
+  # PUT /administrators/1/acitve_user
+  def active_user
+    [:Student, :Teacher].each do |model|
+      params[model].each_key do |id|
+        Module.const_get(model).find(id.to_i).update_attribute(:state, true) if params[model][id] == "1"
+      end
+    end  
+    redirect_to administrators_path
   end
 end

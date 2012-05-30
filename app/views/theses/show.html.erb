@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+  <% if current_student %>
+   <%= link_to "返回", student_page_path %>
+ <% else %>
+   <%= link_to "返回", teacher_page_path %>
+ <% end %>
+<% end %>
+<article>
+  <header>
+    <h3>题目: <%= @thesis.title %></h3>
+  </header>
 
-<p>
-  <b>Item:</b>
-  <%= @thesis.item %>
-</p>
+  <h4>简介</h4>
+  <div >
+    <%= sanitize @thesis.summary, :attributes => %w(id class style) %>
+  </div>
 
-<p>
-  <b>Title:</b>
-  <%= @thesis.title %>
-</p>
-
-<p>
-<b>Summary:</b><br />
-<%= sanitize @thesis.summary, :attributes => %w(id class style) %>
-</p>
-
-<p>
-  <b>Content:</b>
+  <h4>正文:</h4>
   <%= sanitize @thesis.content,:attributes => %(id class style src) %>
-</p>
-<%= link_to 'Edit', edit_thesis_path(@thesis) %> 
-<%= link_to 'Back', theses_path %>
-<%= link_to 'download', url_for(:action => 'download', :id => @thesis.id ) %> 
+  </p>
+  </article>
+<%= link_to '编辑', edit_thesis_path(@thesis) %> 
+<%= link_to '下载', url_for(:action => 'download', :id => @thesis.id ) %> 

@@ -1,11 +1,14 @@
 Webproject::Application.routes.draw do
  
 
+
   get "home/guest"
 
   get "/teacher_page" => 'home#teacher'
 
   get "/student_page"  => 'home#student'
+
+  get "/admin_page" => 'home#admin'
 
 
   resources :theses do
@@ -15,13 +18,18 @@ Webproject::Application.routes.draw do
     end
   end
 
-  resources :administrators 
+  devise_for :administrators
+  resources :administrators do
+   member do
+    put 'active_user'
+   end
+  end 
   
-  devise_for :teachers, :controllers => {:registrations => "registrations" }  
+  devise_for :teachers, :controllers => {:registrations => "registrations", :sessions => "sessions" }  
   resources :teachers  
   
  
-  devise_for :students, :controllers => {:registrations => "registrations" }
+  devise_for :students, :controllers => {:registrations => "registrations", :sessions => "sessions" }
   resources :students do
     member do
       get  'choice_the_thesis'

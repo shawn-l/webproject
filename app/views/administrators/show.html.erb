@@ -4,16 +4,25 @@
   <b>Adminid:</b>
   <%= @administrator.adminId %>
 </p>
-
-<p>
-  <b>Hashed password:</b>
-  <%= @administrator.hashed_password %>
-</p>
-
-<p>
-  <b>Salt:</b>
-  <%= @administrator.salt %>
-</p>
+    <%= form_for @administrator, :url=>active_user_administrator_path ,:html => {:class => "active"}  do |f|%>
+      <% if !@inactive_students.nil? %>
+      <P>Student</p>
+      <% @inactive_students.each do |student| %>
+        <div>
+          Id:<%= student.id %>  <%= check_box "Student","#{student.id}" %>
+        </div> 
+      <% end %>
+    <%end%>
+    <%if !@inactive_teachers.nil? %>
+      <p>Teacher</p>
+      <% @inactive_teachers.each do |teacher| %>
+        <div>
+          Id:<%= teacher.id %>  <%= check_box "Teacher","#{teacher.id}" %>
+        </div>
+      <% end %>
+    <%end%>
+      <%= f.submit %>
+    <% end %>  
 
 
 <%= link_to 'Edit', edit_administrator_path(@administrator) %> 

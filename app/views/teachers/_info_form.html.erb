@@ -1,0 +1,24 @@
+<%= form_for(@teacher) do |f| %>
+  <fieldset>
+    <legend>老师资料</legend>
+  <div class="field">
+    <%= f.label "姓名" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "所在部门" %><br />
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label "电子邮箱" %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "性别" %>
+    <%= f.select :sex,["男","女"] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</fieldset>
+<% end %>

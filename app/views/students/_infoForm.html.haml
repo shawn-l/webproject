@@ -1,23 +1,25 @@
 = form_for(@student) do |f|
-  .field
-    = f.label :name
-    %br
-    = f.text_field :name
-  .field
-    = f.label :majored
-    %br
-    = f.text_field :majored
-  .filed
-    = f.label :grade
-    %br
-    = f.text_field :grade
-  .field
-    = f.label :email
-    %br
-    = f.email_field :email
-  .field
-    = f.label :sex
-    = f.select :sex,["男","女"]
-  .actions
-    = f.submit
+  %fieldset
+    %legend 学生资料
+    .field
+      = f.label "姓名" 
+      %br
+      = f.text_field :name
+    .field
+      = f.label "专业"
+      %br
+      = f.text_field :majored
+    .filed
+      = f.label "年级"
+      %br
+      = f.text_field :grade
+    .field
+      = f.label "电子邮箱"
+      %br
+      = f.email_field :email
+    .field
+      = f.label "性别"
+      = f.select :sex,["男","女"]
+    .actions
+      = f.submit
 

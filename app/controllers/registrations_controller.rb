@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController 
+  layout "login"
   def create
     build_resource
     resource.state = false

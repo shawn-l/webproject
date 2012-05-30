@@ -1,0 +1,31 @@
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+  <h2>Teacher Page</h2>
+  <h4>老师编号: <%= @teacher.tchId %></h4>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "教师资料", @teacehr %>
+  <%= link_to "添加论文题目", new_thesis_path %>
+  <%= link_to "登出", destroy_teacher_session_path, :method => :delete %> 
+<% end %>
+<table id="theses" class="display" > 
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Title</th>
+      <th>Major</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @theses.each do |thesis| %>
+    <tr>
+      <td><%= link_to thesis.item, thesis %></td>
+      <td><%= thesis.title %></td>
+      <td><%= thesis.major %></td>
+      <td><%= link_to "download", url_for(:action => 'download', :controller =>'theses', :id => thesis.id )%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

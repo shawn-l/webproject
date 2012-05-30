@@ -1,31 +1,28 @@
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "返回", teacher_page_path %>
+<% end %>
 <p id="notice"><%= notice %></p>
-
 <p>
-  <b>Tchid:</b>
+  <b>老师编号:</b>
   <%= @teacher.tchId %>
 </p>
-
-
 <p>
-  <b>Name:</b>
+  <b>姓名:</b>
   <%= @teacher.name %>
 </p>
-
 <p>
-  <b>Department:</b>
+  <b>工作部门:</b>
   <%= @teacher.department %>
 </p>
-
 <p>
-  <b>Email:</b>
+  <b>电子邮箱:</b>
   <%= @teacher.email %>
 </p>
-
 <p>
-  <b>Sex:</b>
+  <b>性别:</b>
   <%= @teacher.sex %>
 </p>
-
-
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<%= link_to '编辑', edit_teacher_path(@teacher) %> |

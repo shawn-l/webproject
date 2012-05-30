@@ -65,7 +65,7 @@ class StudentsController < ApplicationController
     
     respond_to do |format|
      if @student.update_attributes(params[:student])
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        format.html { redirect_to student_page_path, notice: 'Student was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_filter :authenticate_teacher!, :only => 'teacher'
   before_filter :authenticate_student!, :only => 'student'
   def guest
+    render(:layout => "layouts/login")
   end
 
   def teacher
@@ -14,4 +15,4 @@ class HomeController < ApplicationController
     @thesis = @student.thesis
   end
 
-end
+ end

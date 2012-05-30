@@ -1,6 +1,14 @@
-<h1>Editing thesis</h1>
-
-<%= render 'edit_form' %>
-
-<%= link_to 'Show', @thesis %> |
-<%= link_to 'Back', theses_path %>
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+  <% if current_student %>
+   <%= link_to "返回", student_page_path %>
+ <% else %>
+   <%= link_to "返回", teacher_page_path %>
+ <% end %>
+<% end %>
+<article>
+  <%= render 'edit_form' %>
+</article>
+<%= link_to '显示', @thesis %> 

@@ -1,6 +1,10 @@
-<h1>Editing teacher</h1>
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "返回", teacher_page_path %>
+<% end %>
+<h2>个人资料</h2>
 
 <%= render 'info_form' %>
 
-<%= link_to 'Show', @teacher %> |
-<%= link_to 'Back', teachers_path %>

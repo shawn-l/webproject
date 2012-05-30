@@ -1,5 +1,6 @@
-<h1>Home#guest</h1>
-<p>Find me in app/views/home/guest.html.erb</p>
-<%= link_to 'teacher login in', new_teacher_session_path %>
-<%= link_to 'teacher page', teacher_page_path %>
-<%= link_to 'student page', student_page_path %>
+<p class="welcome" >欢迎使用</p>
+<div id="login">
+  <%= button_to '教师入口', teacher_page_path(:layout=>"layouts/login"), :form_class=>"left-login-button", :method=>:get %> 
+<%= button_to '学生入口', student_page_path, :form_class=>"right-login-button", :method=>:get %>
+</div>
+<%= link_to 'admin page', new_administrator_session_path %>
