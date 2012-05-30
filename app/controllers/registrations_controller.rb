@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController 
-  layout "login"
+  layout :determine_layout 
   def create
     build_resource
     resource.state = false
@@ -19,6 +19,14 @@ class RegistrationsController < Devise::RegistrationsController
   protected
   def after_sign_up_path_for(resource)
     home_guest_path
+  end
+
+  def determine_layout
+    if current_administrator
+      "application"
+    else
+      "login"
+    end
   end
 
 end

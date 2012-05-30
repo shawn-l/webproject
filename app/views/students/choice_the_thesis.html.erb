@@ -1,9 +1,17 @@
-<table id="theses" class="display" > 
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+  <h3>学生编号: <%= @student.stuId %></h4>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "返回", student_page_path %>
+<% end %>
+<h2>可选论文列表</h2>
+<table id="data_table" class="display" > 
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Major</th>
-      <th>Summary</th>
+      <th>题目</th>
+      <th>专业</th>
+      <th>简介</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +21,7 @@
       <td><%= thesis.title %></td>
       <td><%= thesis.major %></td>
       <td><%= sanitize thesis.summary %></td>
-      <td><%= link_to "choice", student_thesis_path(thesis, :student => @student.id),:method => :post %> 
+      <td><%= link_to "选择", student_thesis_path(thesis, :student => @student.id),:method => :post %> 
     </tr>
   <% end %>
   </tbody>

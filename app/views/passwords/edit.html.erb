@@ -1,0 +1,28 @@
+<div class="login-form">
+<h2>重设密码</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+  <center>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+  <fieldset>
+    <legend>重设密码</legend>
+    <table>
+      <tr>
+        <th> <%= f.label "新密码" %></th>
+        <th> <%= f.password_field :password %></th>
+      </tr>
+      <tr>
+        <th><%= f.label "重输密码" %></th>
+        <th><%= f.password_field :password_confirmation%></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><%= f.submit "重设密码" %></th>
+      </tr>
+     </table>
+   </fieldset>
+ </center>
+<% end %>
+
+</div>

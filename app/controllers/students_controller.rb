@@ -89,7 +89,7 @@ class StudentsController < ApplicationController
   # get /student/1/choice_the_thesis
   def choice_the_thesis
     @student = Student.find(params[:id])
-    @theses = Thesis.find_all_by_major(@student.majored)
+    @theses = Thesis.find_all_by_major_and_student_id(@student.majored, @student.stuId)
   end
 
 end

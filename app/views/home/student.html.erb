@@ -4,11 +4,12 @@
 <% end %>
 <%= content_for :nav do %>
   <%= link_to "学生资料", edit_student_path(@student) %>
-  <%= link_to "登出", destroy_teacher_session_path, :method => :delete %> 
+  <% if @thesis.nil? %>
+    <%= link_to "选择论文", choice_the_thesis_student_path(@student) %>
+  <% end %>
+  <%= link_to "登出", destroy_student_session_path, :method => :delete %> 
 <% end %>
-<% if @thesis.nil? %>
-<%= link_to '选择论文', choice_the_thesis_student_path(@student) %>
-<% else %>
+<% if !@thesis.nil? %>
   <article>
     <header>
       <h3>题目: <%= @thesis.title %></h3>

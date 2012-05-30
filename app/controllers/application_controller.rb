@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
       teacher_page_path 
     elsif resource.is_a?(Student)
       student_page_path
+    else
+        admin_page_path
     end
   end
  

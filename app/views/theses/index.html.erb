@@ -1,29 +1,29 @@
-<h1>Listing theses</h1>
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+  <h3>管理员页面</h3>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "返回", admin_page_path %>
+<% end %>
+<h2>论文数据</h2>
 
-<table>
+<table id="data_table" class="display">
+  <thead>
   <tr>
-    <th>Item</th>
-    <th>Title</th>
-    <th>Summary</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
+    <th>题目</th>
+    <th>简介</th>
     <th></th>
   </tr>
-
-<% @theses.each do |thesis| %>
+  </thead>
+  <tbody>
+  <% @theses.each do |thesis| %>
   <tr>
-    <td><%= thesis.item %></td>
     <td><%= thesis.title %></td>
-    <td><%= thesis.summary %></td>
-    <td><%= thesis.content %></td>
-    <td><%= link_to 'Show', thesis %></td>
-    <td><%= link_to 'Edit', edit_thesis_path(thesis) %></td>
+    <td><%= sanitize thesis.summary, :attributes => %w(id class style) %></td>
     <td><%= link_to 'Destroy', thesis, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
-<% end %>
+  <% end %>
+  </tbody>
 </table>
 
-<br />
 
-<%= link_to 'New Thesis', new_thesis_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529154717) do
+ActiveRecord::Schema.define(:version => 20120530153837) do
 
   create_table "administrators", :force => true do |t|
     t.string   "adminId"
@@ -60,9 +60,6 @@ ActiveRecord::Schema.define(:version => 20120529154717) do
 
   create_table "teachers", :force => true do |t|
     t.string   "tchId"
-    t.string   "name"
-    t.string   "department"
-    t.string   "sex"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "state"
@@ -76,6 +73,9 @@ ActiveRecord::Schema.define(:version => 20120529154717) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "sex"
+    t.string   "department"
+    t.string   "name"
   end
 
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true

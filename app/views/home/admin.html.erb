@@ -1,0 +1,40 @@
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+  <h3>管理员页面</h3>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "学生数据", students_path %> 
+  <%= link_to "老师数据", teachers_path %> 
+  <%= link_to "论文数据", theses_path %>
+  <%= link_to "登出", destroy_administrator_session_path, :method => :delete %> 
+<% end %>
+
+<%= form_for @administrator, :url=>active_user_administrator_path(@administrator) ,:html => {:class => "active"}  do |f|%>
+  <h3>待激活名单</h3>
+  <table id="data_table" class="display" >
+    <thead>
+      <tr>
+        <th></th>
+        <th>编号</th>
+        <th>激活</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @inactive_students.each do |student| %>
+      <tr>
+        <th>学生</th>
+        <th><%= student.stuId %></th>
+        <th><%= check_box "Student","#{student.id}" %></th>
+      </tr>
+    <% end %>
+    <% @inactive_teachers.each do |teacher| %>
+      <tr>
+        <th>老师</th>
+        <th><%= teacher.tchId %></th>
+        <th><%= check_box "Teacher","#{teacher.id}" %></th>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= f.submit %>
+<% end %>  

@@ -1,17 +1,26 @@
-<h1>Listing teachers</h1>
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+  <h3>管理员页面</h3>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to '新建老师', new_registration_path(Teacher) %>
+  <%= link_to "返回", admin_page_path %>
+<% end %>
+<h2>老师数据</h2>
 
-<table>
+<table id="data_table" class="display">
+  <thead>
   <tr>
-    <th>Tchid</th>
-    <th>Name</th>
-    <th>Department</th>
-    <th>Email</th>
-    <th>Sex</th>
-    <th>State</th>
+    <th>老师编号</th>
+    <th>姓名</th>
+    <th>部门</th>
+    <th>邮箱</th>
+    <th>性别</th>
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @teachers.each do |teacher| %>
   <tr>
     <td><%= teacher.tchId %></td>
@@ -19,20 +28,12 @@
     <td><%= teacher.department %></td>
     <td><%= teacher.email %></td>
     <td><%= teacher.sex %></td>
-    <td><%= teacher.state %></td>
-    <td><%= link_to 'Show', teacher %></td>
-    <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-    <td><%= link_to 'Destroy', teacher, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '显示', teacher %></td>
+    <td><%= link_to '删除', teacher, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
-<br />
 
-<%= link_to 'New Teacher', new_teacher_registration_path %>
-<% if teacher_signed_in? %>
-  <%= current_teacher.tchId %>
-  <%= link_to 'Logout', destroy_teacher_session_path, :method=> :delete %>
-<% else %>
-  <%= link_to 'Login', new_teacher_session_path %>
-<% end %>
+

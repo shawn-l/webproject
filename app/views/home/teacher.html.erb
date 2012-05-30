@@ -9,7 +9,7 @@
 <% end %>
 
 <h2>已有论文列表</h2>
-<table id="theses" class="display" > 
+<table id="data_table" class="display" > 
   <thead>
     <tr>
       <th>题目</th>
@@ -24,7 +24,7 @@
       <td><%= link_to thesis.title, thesis %></td>
       <td><%= thesis.major %></td>
       <td><%= link_to "删除", thesis, :method => :delete %></td>
-      <td><%= link_to "download", url_for(:action => 'download', :controller =>'theses', :id => thesis.id )%></td>
+      <td><%= link_to "下载", url_for(:action => 'download', :controller =>'theses', :id => thesis.id )%></td>
     </tr>
   <% end %>
   </tbody>

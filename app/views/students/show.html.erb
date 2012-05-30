@@ -2,59 +2,37 @@
   <h1>论文选题系统</h1>
 <% end %>
 <%= content_for :nav do %>
-  <%= link_to "返回", student_page_path%>
+  <%= link_to "返回", admin_page_path %>
 <% end %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Id:</b>
-  <%= @student.id %>
-</p>
-
-<p>
-  <b>stuId:</b>
+  <b>学号:</b>
   <%= @student.stuId %>
 </p>
 <p>
-  <b>Hashed password:</b>
-  <%= @student.hashed_password %>
-</p>
-
-<p>
-  <b>Salt:</b>
-  <%= @student.salt %>
-</p>
-
-<p>
-  <b>Name:</b>
+  <b>姓名:</b>
   <%= @student.name %>
 </p>
 
 <p>
-  <b>Majored:</b>
+  <b>专业:</b>
   <%= @student.majored %>
 </p>
 
 <p>
-  <b>Grade:</b>
+  <b>年级:</b>
   <%= @student.grade %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>邮箱:</b>
   <%= @student.email %>
 </p>
 
 <p>
-  <b>Sex:</b>
+  <b>性别:</b>
   <%= @student.sex %>
 </p>
 
-<p>
-  <b>State:</b>
-  <%= @student.state %>
-</p>
 
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>

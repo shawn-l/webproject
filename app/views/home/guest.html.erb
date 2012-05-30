@@ -1,3 +1,6 @@
+<% if alert %>
+  <%= alert %>
+<% end %>
 <p class="welcome" >欢迎使用</p>
 <div id="login">
   <%= button_to '教师入口', teacher_page_path(:layout=>"layouts/login"), :form_class=>"left-login-button", :method=>:get %> 

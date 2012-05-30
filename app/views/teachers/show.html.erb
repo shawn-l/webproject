@@ -2,7 +2,7 @@
   <h1>论文选题系统</h1>
 <% end %>
 <%= content_for :nav do %>
-  <%= link_to "返回", teacher_page_path %>
+  <%= link_to "返回", admin_page_path %>
 <% end %>
 <p id="notice"><%= notice %></p>
 <p>
@@ -25,4 +25,3 @@
   <b>性别:</b>
   <%= @teacher.sex %>
 </p>
-<%= link_to '编辑', edit_teacher_path(@teacher) %> |

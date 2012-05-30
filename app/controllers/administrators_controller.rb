@@ -85,10 +85,12 @@ class AdministratorsController < ApplicationController
   # PUT /administrators/1/acitve_user
   def active_user
     [:Student, :Teacher].each do |model|
-      params[model].each_key do |id|
-        Module.const_get(model).find(id.to_i).update_attribute(:state, true) if params[model][id] == "1"
+      if params[model]
+        params[model].each_key do |id|
+          Module.const_get(model).find(id.to_i).update_attribute(:state, true) if params[model][id] == "1"
+        end
       end
     end  
-    redirect_to administrators_path
+    redirect_to admin_page_path 
   end
 end

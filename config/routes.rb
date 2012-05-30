@@ -18,18 +18,18 @@ Webproject::Application.routes.draw do
     end
   end
 
-  devise_for :administrators
+  devise_for :administrators, :controllers => {:registrations => "registrations", :sessions => "sessions", :passwords => "passwords" }
   resources :administrators do
    member do
     put 'active_user'
    end
   end 
   
-  devise_for :teachers, :controllers => {:registrations => "registrations", :sessions => "sessions" }  
+  devise_for :teachers, :controllers => {:registrations => "registrations", :sessions => "sessions", :passwords => "passwords" }  
   resources :teachers  
   
  
-  devise_for :students, :controllers => {:registrations => "registrations", :sessions => "sessions" }
+  devise_for :students, :controllers => {:registrations => "registrations", :sessions => "sessions", :passwords => "passwords" }
   resources :students do
     member do
       get  'choice_the_thesis'
