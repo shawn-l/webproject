@@ -64,7 +64,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     
     respond_to do |format|
-     if @student.update_attributes(params[:student])
+     if @student.update_attributes(params[:student]) and @student.student_information.update_attributes(params[:student_information])
         format.html { redirect_to student_page_path, notice: 'Student was successfully updated.' }
         format.json { head :ok }
       else
@@ -89,7 +89,7 @@ class StudentsController < ApplicationController
   # get /student/1/choice_the_thesis
   def choice_the_thesis
     @student = Student.find(params[:id])
-    @theses = Thesis.find_all_by_major_and_student_id(@student.majored, @student.stuId)
+    @theses = Thesis.find_all_by_major_and_student_id(@student.student_information.major, @student.stuId)
   end
 
 end

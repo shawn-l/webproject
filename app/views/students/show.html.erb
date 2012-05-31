@@ -2,7 +2,7 @@
   <h1>论文选题系统</h1>
 <% end %>
 <%= content_for :nav do %>
-  <%= link_to "返回", admin_page_path %>
+  <%= link_to "返回", students_path %>
 <% end %>
 <p id="notice"><%= notice %></p>
 
@@ -11,28 +11,27 @@
   <%= @student.stuId %>
 </p>
 <p>
+  <b>邮箱:</b>
+  <%= @student.email %>
+</p>
+<p>
   <b>姓名:</b>
-  <%= @student.name %>
+  <%= @student.student_information.name %>
 </p>
 
 <p>
   <b>专业:</b>
-  <%= @student.majored %>
+  <%= @student.student_information.major %>
 </p>
 
 <p>
   <b>年级:</b>
-  <%= @student.grade %>
-</p>
-
-<p>
-  <b>邮箱:</b>
-  <%= @student.email %>
+  <%= @student.student_information.grade %>
 </p>
 
 <p>
   <b>性别:</b>
-  <%= @student.sex %>
+  <%= @student.student_information.sex %>
 </p>
 
 

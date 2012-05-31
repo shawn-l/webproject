@@ -1,5 +1,6 @@
 class Teacher < ActiveRecord::Base
-  has_many :theses
+  has_many :theses, :dependent => :destroy
+  has_one :teacher_information, :dependent => :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

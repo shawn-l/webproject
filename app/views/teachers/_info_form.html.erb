@@ -2,21 +2,23 @@
   <fieldset>
     <legend>老师资料</legend>
   <div class="field">
-    <%= f.label "姓名" %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "所在部门" %><br />
-    <%= f.text_field :department %>
-  </div>
-  <div class="field">
     <%= f.label "电子邮箱" %><br />
     <%= f.email_field :email %>
   </div>
-  <div class="field">
-    <%= f.label "性别" %>
-    <%= f.select :sex,["男","女"] %>
-  </div>
+  <%= fields_for @teacher.teacher_information do |tch_info| %>
+    <div class="field">
+      <%= tch_info.label "姓名" %><br />
+      <%= tch_info.text_field :name %>
+    </div>
+    <div class="field">
+      <%= tch_info.label "所在部门" %><br />
+      <%= tch_info.text_field :department %>
+    </div>
+    <div class="field">
+      <%= tch_info.label "性别" %>
+      <%= tch_info.select :sex,["男","女"] %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

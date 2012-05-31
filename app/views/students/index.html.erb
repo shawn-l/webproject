@@ -11,11 +11,7 @@
   <thead>
   <tr>
     <th>学号</th>
-    <th>姓名</th>
-    <th>专业</th>
-    <th>年级</th>
     <th>邮箱</th>
-    <th>性别</th>
     <th></th>
     <th></th>
   </tr>
@@ -23,12 +19,8 @@
 <tbody>
 <% @students.each do |student| %>
   <tr>
-    <td><%= student.id %></td>
-    <td><%= student.name %></td>
-    <td><%= student.majored %></td>
-    <td><%= student.grade %></td>
+    <td><%= student.stuId %></td>
     <td><%= student.email %></td>
-    <td><%= student.sex %></td>
     <td><%= link_to '显示', student %></td>
     <td><%= link_to '删除', student, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

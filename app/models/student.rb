@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   has_one :thesis
+  has_one :student_information, :dependent => :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

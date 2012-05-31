@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530153837) do
+ActiveRecord::Schema.define(:version => 20120531024020) do
 
   create_table "administrators", :force => true do |t|
     t.string   "adminId"
@@ -32,16 +32,26 @@ ActiveRecord::Schema.define(:version => 20120530153837) do
   add_index "administrators", ["email"], :name => "index_administrators_on_email", :unique => true
   add_index "administrators", ["reset_password_token"], :name => "index_administrators_on_reset_password_token", :unique => true
 
-  create_table "students", :force => true do |t|
-    t.string   "hashed_password"
-    t.string   "salt"
+  create_table "majors", :force => true do |t|
     t.string   "name"
-    t.string   "majored"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "student_informations", :force => true do |t|
+    t.string   "name"
+    t.string   "major"
     t.string   "grade"
+    t.string   "sex"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "student_id"
+  end
+
+  create_table "students", :force => true do |t|
     t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "sex"
     t.string   "stuId"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -58,6 +68,15 @@ ActiveRecord::Schema.define(:version => 20120530153837) do
   add_index "students", ["email"], :name => "index_students_on_email", :unique => true
   add_index "students", ["reset_password_token"], :name => "index_students_on_reset_password_token", :unique => true
 
+  create_table "teacher_informations", :force => true do |t|
+    t.string   "name"
+    t.string   "department"
+    t.string   "sex"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "teacher_id"
+  end
+
   create_table "teachers", :force => true do |t|
     t.string   "tchId"
     t.datetime "created_at"
@@ -73,9 +92,6 @@ ActiveRecord::Schema.define(:version => 20120530153837) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "sex"
-    t.string   "department"
-    t.string   "name"
   end
 
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true

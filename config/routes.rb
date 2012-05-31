@@ -1,6 +1,7 @@
 Webproject::Application.routes.draw do
- 
 
+
+  resources :majors
 
   get "home/guest"
 

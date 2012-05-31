@@ -15,7 +15,7 @@ class TeachersController < ApplicationController
   # GET /teachers/1.json
   def show
     @teacher = Teacher.find(params[:id])
-
+ 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @teacher }
@@ -43,7 +43,6 @@ class TeachersController < ApplicationController
   def create
     params[:teacher][:state] = false
     @teacher = Teacher.new(params[:teacher])
-
     respond_to do |format|
       if @teacher.save
         email = Thread.new{
@@ -62,9 +61,8 @@ class TeachersController < ApplicationController
   # PUT /teachers/1.json
   def update
     @teacher = Teacher.find(params[:id])
-
     respond_to do |format|
-      if @teacher.update_attributes(params[:teacher])
+      if @teacher.update_attributes(params[:teacher]) and @teacher.teacher_information.update_attributes(params[:teacher_information])
         format.html { redirect_to teacher_page_path, notice: 'Teacher was successfully updated.' }
         format.json { head :ok }
       else
