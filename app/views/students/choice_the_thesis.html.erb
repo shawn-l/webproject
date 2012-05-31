@@ -10,7 +10,7 @@
   <thead>
     <tr>
       <th>题目</th>
-      <th>专业</th>
+      <th>指导老师</th>
       <th>简介</th>
       <th></th>
     </tr>
@@ -19,7 +19,7 @@
   <% @theses.each do |thesis| %>
     <tr>
       <td><%= thesis.title %></td>
-      <td><%= thesis.major %></td>
+      <td><%= thesis.teacher.teacher_information.name %></td>
       <td><%= sanitize thesis.summary %></td>
       <td><%= link_to "选择", student_thesis_path(thesis, :student => @student.id),:method => :post %> 
     </tr>

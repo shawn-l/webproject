@@ -13,7 +13,7 @@
       .field
         = stu_info.label "专业"
         %br
-        = stu_info.text_field :major
+        = stu_info.select :major_id, Major.all.collect {|m| [m.name, m.id]}
       .filed
         = stu_info.label "年级"
         %br

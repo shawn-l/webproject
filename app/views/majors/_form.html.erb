@@ -10,12 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <fieldset>
+    <legend>专业信息</legend>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "专业名字" %>
     <%= f.text_field :name %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+</fieldset>
 <% end %>

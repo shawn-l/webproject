@@ -44,7 +44,7 @@ class MajorsController < ApplicationController
 
     respond_to do |format|
       if @major.save
-        format.html { redirect_to @major, notice: 'Major was successfully created.' }
+        format.html { redirect_to majors_path, notice: 'Major was successfully created.' }
         format.json { render json: @major, status: :created, location: @major }
       else
         format.html { render action: "new" }

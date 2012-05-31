@@ -22,7 +22,7 @@
   <% @theses.each do |thesis| %>
     <tr>
       <td><%= link_to thesis.title, thesis %></td>
-      <td><%= thesis.major %></td>
+      <td><%= thesis.major.name %></td>
       <td><%= link_to "删除", thesis, :method => :delete %></td>
       <td><%= link_to "下载", url_for(:action => 'download', :controller =>'theses', :id => thesis.id )%></td>
     </tr>
