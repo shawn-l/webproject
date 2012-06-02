@@ -9,3 +9,4 @@
 //= require dataTables/jquery.dataTables
 //= require_tree .
 //= require kindeditor
+//= require rails.validations

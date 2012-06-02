@@ -9,33 +9,27 @@
 
 <h2>注册</h2>
 <%= devise_error_messages! %>
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:validate => true)  do |f| %>
   <center>
   <fieldset>
     <legend>注册</legend>
+
     <table>
-     <% if resource.is_a?(Teacher) %>
       <tr>
-        <th> <%= f.label "老师Id" %></th>
-        <th> <%= f.text_field :tchId %></th>
+        <%= show_user_label(resource,f) %>
+        <%= show_user_input(resource,f) %>
       </tr>
-    <% else %>
-      <tr>
-        <th> <%= f.label "学生Id" %></th>
-        <th> <%= f.text_field :stuId %></th>
-      </tr>
-    <% end %>
       <tr>
         <th><%= f.label "邮箱" %></th>
-        <th><%= f.email_field :email %></th>
+        <th class="th"><%= f.email_field :email %></th>
       </tr>
       <tr>
         <th><%= f.label "密码" %></th>
-        <th><%= f.password_field :password %></th>
+        <th class="th"><%= f.password_field :password %></th>
       </tr>    
       <tr>
         <th><%= f.label "密码确认" %></th>
-        <th><%= f.password_field :password_confirmation %></th>
+        <th class="th"><%= f.password_field :password_confirmation %></th>
       </tr>    
       <tr>
         <th>   </th>
@@ -43,7 +37,7 @@
       </tr>
     </table>
   </fieldset>
-  <%= link_to "返回", root_path %>
+  <%= link_to "返回", new_session_path(resource.class) %>
   </center>
 <% end %>
 </div>

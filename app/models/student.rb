@@ -9,9 +9,11 @@ class Student < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :stuId, :email, :password, :password_confirmation, :remember_me
-  validates :stuId, :presence => true, :uniqueness => true
+  validates :stuId, :presence => true, :uniqueness => true, :numericality => true
   attr_accessor :login
   attr_accessible :login
+  validates :login, :numericality => true, :presence => true
+  validates :password, :confirmation => true
   
   
   def self.find_first_by_auth_conditions(warden_conditions)

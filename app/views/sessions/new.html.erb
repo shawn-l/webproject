@@ -1,25 +1,26 @@
 <div class="login-form"> 
   <h2>登录页面</h2>
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :validate => true) do |f| %>
   <center>
   <fieldset>
     <legend>登录</legend>
     <table>
       <tr>
         <th> <%= f.label "登录" %></th>
-        <th> <%= f.text_field :login %></th>
+        <th class="th"> <%= f.text_field :login %></th>
       </tr>
       <tr>
         <th><%= f.label "密码" %></th>
-        <th><%= f.password_field :password %></th>
+        <th><%= f.password_field :password, :validate => false %></th>
       </tr>
       <tr>
         <th>   </th>
         <th><%= f.submit "登录"%><%= f.check_box :remember_me %><%= f.label "记住我" %></th>
       </tr>
-          </table>
+    </table>
+    <%= show_links_for_user(resource) %> 
   </fieldset>
-<%= render :partial => "shared/links" %>
+  <%= link_to "返回", root_path %>
 </center>
 <% end %>
 </div>

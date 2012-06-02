@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Mysql2::Client - mysql2-0.3.11 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/mysql2/client.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default_query_options">::default_query_options</a>
+    
+    <li><a href="#method-c-encoding_from_charset">::encoding_from_charset</a>
+    
+    <li><a href="#method-c-encoding_from_charset_code">::encoding_from_charset_code</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Mysql2.html">Mysql2</a>
+  
+    <li><a href="../Mysql2/Client.html">Mysql2::Client</a>
+  
+    <li><a href="../Mysql2/EM.html">Mysql2::EM</a>
+  
+    <li><a href="../Mysql2/EM/Client.html">Mysql2::EM::Client</a>
+  
+    <li><a href="../Mysql2/EM/Client/Watcher.html">Mysql2::EM::Client::Watcher</a>
+  
+    <li><a href="../Mysql2/Error.html">Mysql2::Error</a>
+  
+    <li><a href="../Mysql2/Result.html">Mysql2::Result</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Mysql2::Client</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CHARSET_MAP">CHARSET_MAP
+        
+        <dd class="description">
+        
+      
+        <dt id="MYSQL_CHARSET_MAP">MYSQL_CHARSET_MAP
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-query_options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">query_options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default_query_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_query_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_query_options-source">
+            <pre><span class="ruby-comment"># File lib/mysql2/client.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_query_options</span>
+  <span class="ruby-identifier">@@default_query_options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_query_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_query_options-method -->
+
+    
+      <div id="method-c-encoding_from_charset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding_from_charset</span><span
+            class="method-args">(charset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="encoding_from_charset-source">
+            <pre><span class="ruby-comment"># File lib/mysql2/client.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">encoding_from_charset</span>(<span class="ruby-identifier">charset</span>)
+  <span class="ruby-constant">CHARSET_MAP</span>[<span class="ruby-identifier">charset</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- encoding_from_charset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- encoding_from_charset-method -->
+
+    
+      <div id="method-c-encoding_from_charset_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding_from_charset_code</span><span
+            class="method-args">(code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="encoding_from_charset_code-source">
+            <pre><span class="ruby-comment"># File lib/mysql2/client.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">encoding_from_charset_code</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mapping</span> = <span class="ruby-constant">MYSQL_CHARSET_MAP</span>[<span class="ruby-identifier">code</span>]
+    <span class="ruby-identifier">encoding_from_charset</span>(<span class="ruby-identifier">mapping</span>[<span class="ruby-value">:name</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- encoding_from_charset_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- encoding_from_charset_code-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(opts = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/mysql2/client.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-ivar">@query_options</span> = <span class="ruby-identifier">@@default_query_options</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-ivar">@query_options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">opts</span>
+
+  <span class="ruby-identifier">init_connection</span>
+
+  [<span class="ruby-value">:reconnect</span>, <span class="ruby-value">:connect_timeout</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{key}=&quot;</span>, <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">key</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># force the encoding to utf8</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">charset_name</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'utf8'</span>
+
+  <span class="ruby-ivar">@read_timeout</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:read_timeout</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@read_timeout</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@read_timeout</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Mysql2</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-node">&quot;read_timeout must be a positive integer, you passed #{@read_timeout}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ssl_set</span>(*<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-value">:sslkey</span>, <span class="ruby-value">:sslcert</span>, <span class="ruby-value">:sslca</span>, <span class="ruby-value">:sslcapath</span>, <span class="ruby-value">:sslcipher</span>))
+
+  <span class="ruby-identifier">user</span>     = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:username</span>]
+  <span class="ruby-identifier">pass</span>     = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:password</span>]
+  <span class="ruby-identifier">host</span>     = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:host</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'localhost'</span>
+  <span class="ruby-identifier">port</span>     = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:port</span>] <span class="ruby-operator">||</span> <span class="ruby-value">3306</span>
+  <span class="ruby-identifier">database</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:database</span>]
+  <span class="ruby-identifier">socket</span>   = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:socket</span>]
+  <span class="ruby-identifier">flags</span>    = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:flags</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:flags</span>] <span class="ruby-operator">|</span> <span class="ruby-ivar">@query_options</span>[<span class="ruby-value">:connect_flags</span>] <span class="ruby-operator">:</span> <span class="ruby-ivar">@query_options</span>[<span class="ruby-value">:connect_flags</span>]
+
+  <span class="ruby-identifier">connect</span> <span class="ruby-identifier">user</span>, <span class="ruby-identifier">pass</span>, <span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">database</span>, <span class="ruby-identifier">socket</span>, <span class="ruby-identifier">flags</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

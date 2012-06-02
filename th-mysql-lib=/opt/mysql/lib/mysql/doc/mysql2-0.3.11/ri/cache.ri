@@ -1,0 +1,7 @@
+{:ancestors{	I"Mysql2::Client:EF[I"Object;FI"Mysql2::Error;F[I"StandardError;FI"Mysql2::Result;F[I"Enumerable;FI"Object;FI"Mysql2::EM::Client;F[I"Mysql2::Client;F:attributes{@[I"attr_reader query_options;F@
+[I"attr_accessor errno;FI"attr_accessor error_number;FI"attr_accessor sql_state;F:class_methods{@[	I"default_query_options;FI"encoding_from_charset;FI"encoding_from_charset_code;FI"new;F@
+[I"new;FI" Mysql2::EM::Client::Watcher;F[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{	@[I"query_options;F@
+[I"
+errno;FI"error_number;FI"sql_state;F@[I"
+query;F@#[I"notify_readable;F:modules[I"Mysql2;F@I"Mysql2::EM;FI"Mysql2::EM::Client;FI" Mysql2::EM::Client::Watcher;FI"Mysql2::Error;FI"Mysql2::Result;F
