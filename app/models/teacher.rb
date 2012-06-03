@@ -2,6 +2,7 @@
 class Teacher < ActiveRecord::Base
   has_many :theses, :dependent => :destroy
   has_one :teacher_information, :dependent => :destroy
+  accepts_nested_attributes_for :teacher_information
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -13,9 +14,7 @@ class Teacher < ActiveRecord::Base
   validates :tchId, :presence =>true, :uniqueness => true, :numericality =>true
   attr_accessor :login
   attr_accessible :login
-  validates :login, :numericality => true, :presence => true
   validates :password, :confirmation => true
-
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

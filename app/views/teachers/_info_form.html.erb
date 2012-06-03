@@ -1,11 +1,11 @@
-<%= form_for(@teacher) do |f| %>
+<%= form_for(@teacher ) do |f| %>
   <fieldset>
     <legend>老师资料</legend>
   <div class="field">
     <%= f.label "电子邮箱" %><br />
     <%= f.email_field :email %>
   </div>
-  <%= fields_for @teacher.teacher_information do |tch_info| %>
+  <%= f.fields_for :teacher_information do |tch_info| %>
     <div class="field">
       <%= tch_info.label "姓名" %><br />
       <%= tch_info.text_field :name %>

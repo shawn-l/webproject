@@ -62,7 +62,7 @@ class TeachersController < ApplicationController
   def update
     @teacher = Teacher.find(params[:id])
     respond_to do |format|
-      if @teacher.update_attributes(params[:teacher]) and @teacher.teacher_information.update_attributes(params[:teacher_information])
+      if @teacher.update_attributes(params[:teacher]) and @teacher.teacher_information.update_attributes(params[:teacher][:teacher_information_attributes])
         format.html { redirect_to teacher_page_path, notice: 'Teacher was successfully updated.' }
         format.json { head :ok }
       else

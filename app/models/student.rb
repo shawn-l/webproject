@@ -1,6 +1,7 @@
 class Student < ActiveRecord::Base
   has_one :thesis
   has_one :student_information, :dependent => :destroy
+  accepts_nested_attributes_for :student_information
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -12,7 +13,6 @@ class Student < ActiveRecord::Base
   validates :stuId, :presence => true, :uniqueness => true, :numericality => true
   attr_accessor :login
   attr_accessible :login
-  validates :login, :numericality => true, :presence => true
   validates :password, :confirmation => true
   
   

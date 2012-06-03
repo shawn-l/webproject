@@ -7,4 +7,13 @@ module ThesesHelper
       link_to "返回", teacher_page_path
     end
   end
+  
+  def edit_the_summary_for_teacher(f)
+    if current_teacher
+      f.kindeditor :summary, :width => 660, :height => 100, :resizeTypeType => 0
+    else
+      sanitize @thesis.summary, :attributes => %w(id class style)
+    end
+  end
+
 end

@@ -23,4 +23,10 @@ module RegistrationsHelper
       end
     end
   end
+
+  def show_return_link_to_user(resource)
+    if !current_administrator
+      link_to "返回", new_session_path(resource.class)
+    end 
+  end
 end

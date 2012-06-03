@@ -5,7 +5,7 @@
       = f.label "电子邮箱"
       %br
       = f.email_field :email
-    = fields_for @student.student_information do |stu_info|
+    = f.fields_for :student_information do |stu_info|
       .field
         = stu_info.label "姓名" 
         %br
