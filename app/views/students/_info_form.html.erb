@@ -1,0 +1,30 @@
+<%= form_for @student do |f| %>
+  <fieldset>
+    <legend>学生资料</legend>
+  <div class="field">
+    <%= f.label "电子邮箱" %><br />
+    <%= f.email_field :email %>
+  </div>
+  <%= f.fields_for :student_information do |stu_info| %>
+    <div class="field">
+      <%= stu_info.label "姓名" %><br />
+      <%= stu_info.text_field :name %>
+    </div>
+    <div class="field">
+      <%= stu_info.label "专业" %><br />
+      <%= stu_info.select :major_id, Major.all.collect {|m| [m.name, m.id]} %>
+    </div>
+    <div class="field">
+      <%= stu_info.label "年级" %><br />
+      <%= stu_info.select :grade, grade_year %>
+    </div>
+    <div class="field">
+      <%= stu_info.label "性别" %>
+      <%= stu_info.select :sex,["男","女"] %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</fieldset>
+<% end %>

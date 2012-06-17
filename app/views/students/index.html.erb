@@ -11,7 +11,9 @@
   <thead>
   <tr>
     <th>学号</th>
-    <th>邮箱</th>
+    <th>年级</th>
+    <th>专业</th>
+    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -20,9 +22,11 @@
 <% @students.each do |student| %>
   <tr>
     <td><%= student.stuId %></td>
-    <td><%= student.email %></td>
+    <td><%= student.student_information.grade %></td>
+    <td><%= student.student_information.major.name if !student.student_information.major.nil?%></td>
     <td><%= link_to '显示', student %></td>
-    <td><%= link_to '删除', student, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '修改', edit_student_path(student) %></td>
+    <td><%= link_to '删除', student, confirm: '确定要删除?', method: :delete %></td>
   </tr>
 <% end %>
 </tbody>

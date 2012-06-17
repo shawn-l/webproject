@@ -48,5 +48,8 @@ module Webproject
     config.assets.version = '1.0'
     
     config.middleware.use "PDFKit::Middleware", :print_media_type => true
+
+    ENV['RECAPTCHA_PUBLIC_KEY'] = '6LeZSNISAAAAADBu3aYjA5FRrpaA0_zBJ_ee9xM5'
+    ENV['RECAPTCHA_PRIVATE_KEY'] = '6LeZSNISAAAAAFwSFcKZ8PmcTU10aWNd191431Zg' 
   end
 end

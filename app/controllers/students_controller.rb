@@ -1,5 +1,6 @@
 #encoding: utf-8
 class StudentsController < ApplicationController
+  before_filter :authenticate_administrator!, :only => ['index','destroy'] 
   # GET /students
   # GET /students.json
   def index
@@ -65,7 +66,7 @@ class StudentsController < ApplicationController
     
     respond_to do |format|
      if @student.update_attributes(params[:student]) and @student.student_information.update_attributes(params[:student][:student_information_attributes])
-        format.html { redirect_to student_page_path, notice: 'Student was successfully updated.' }
+        format.html { redirect_to @student, notice: '更新成功。' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

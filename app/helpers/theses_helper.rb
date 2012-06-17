@@ -1,6 +1,6 @@
 #encoding: utf-8
 module ThesesHelper
-  def show_nav_for_show_page
+  def show_return_link
     if current_student
       link_to "返回", student_page_path
     else
@@ -10,7 +10,7 @@ module ThesesHelper
   
   def edit_the_summary_for_teacher(f)
     if current_teacher
-      f.kindeditor :summary, :width => 660, :height => 100, :resizeTypeType => 0
+      f.kindeditor :summary, :width => 660, :height => 100, :resizeType => 0
     else
       sanitize @thesis.summary, :attributes => %w(id class style)
     end

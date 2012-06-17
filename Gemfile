@@ -4,12 +4,7 @@ gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'mysql2', '<0.3'
-end
+gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -52,4 +47,7 @@ gem 'wkhtmltopdf-binary'
 
 
 gem 'client_side_validations'
+
+gem 'recaptcha', :require => "recaptcha/rails"
+
 

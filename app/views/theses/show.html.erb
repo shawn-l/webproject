@@ -2,7 +2,8 @@
   <h1>论文选题系统</h1>
 <% end %>
 <%= content_for :nav do %>
-  <%= show_nav_for_show_page %>
+  <%= show_return_link %>
+  <%= link_to "答疑", questions_path %>
 <% end %>
 <article>
   <header>

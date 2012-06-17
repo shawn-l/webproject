@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  content: MyText
+  thesis_id: 1
+
+two:
+  content: MyText
+  thesis_id: 1

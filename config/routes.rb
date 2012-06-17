@@ -1,5 +1,11 @@
 Webproject::Application.routes.draw do
 
+  resources :questions do
+    member do
+      post 'add_answer'
+      post 'destroy_answer'
+    end
+  end
 
   resources :majors
 
@@ -15,6 +21,7 @@ Webproject::Application.routes.draw do
   resources :theses do
     member do
       get 'download'
+      get 'record'
       post 'student'
     end
   end

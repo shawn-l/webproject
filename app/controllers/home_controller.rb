@@ -14,6 +14,9 @@ class HomeController < ApplicationController
   def student
     @student = current_student
     @thesis = @student.thesis
+    if !@thesis.nil?
+     session[:thesis_id] = @thesis.id
+    end
   end
    
   def admin
@@ -21,4 +24,6 @@ class HomeController < ApplicationController
     @inactive_teachers = Teacher.find_all_by_state(false)
     @inactive_students = Student.find_all_by_state(false)
   end
+
+
  end

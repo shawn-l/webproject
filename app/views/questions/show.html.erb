@@ -1,0 +1,26 @@
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+  <%=  link_to "返回", questions_path %>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>问题:</b>
+  <%= @question.content %>
+</p>
+<%= form_for @question, :url => {:action => "add_answer"}, :method => :post do |f| %>
+  <%= f.fields_for :answer do |builder| %>
+    <%= render 'answer_fields', :f => builder %> 
+  <% end %>
+  <%= f.submit "回复" %>
+<% end %>
+<% @answers.each do |answer| %>
+  <div>
+    <p><%= answer.name %>:<%= answer.content %>
+    <%= link_to "delete", destroy_answer_question_path(@question, :answer_id => answer.id), :method => :post %>
+    </p>
+  </div>  
+<% end %>
+

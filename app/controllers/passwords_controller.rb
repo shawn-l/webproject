@@ -5,8 +5,8 @@ class PasswordsController < Devise::PasswordsController
 
     if resource.errors.empty?
       redirect_to root_path
-      else
-        respond_with resource
-      end
+    else
+      respond_with resource
+    end
   end
 end

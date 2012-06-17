@@ -4,4 +4,6 @@ module SessionsHelper
       render :partial => "shared/links"
     end
   end
+  
+
 end

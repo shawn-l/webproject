@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
         admin_page_path
     end
   end
+
  
 end

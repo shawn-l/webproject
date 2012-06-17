@@ -1,5 +1,6 @@
+#encoding: utf-8
 class TeachersController < ApplicationController
-  
+  before_filter :authenticate_administrator!, :only => ['index','destroy']
   # GET /teachers
   # GET /teachers.json
   def index
@@ -63,7 +64,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
     respond_to do |format|
       if @teacher.update_attributes(params[:teacher]) and @teacher.teacher_information.update_attributes(params[:teacher][:teacher_information_attributes])
-        format.html { redirect_to teacher_page_path, notice: 'Teacher was successfully updated.' }
+        format.html { redirect_to @teacher, notice: '更新成功。'}
         format.json { head :ok }
       else
         format.html { render action: "edit" }

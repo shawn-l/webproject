@@ -1,5 +1,7 @@
 <div class="login-form"> 
   <h2>登录页面</h2>
+  <%= show_alert_message %>
+<%= devise_error_messages! %>
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :validate => true) do |f| %>
   <center>
   <fieldset>

@@ -2,7 +2,9 @@
 class SessionsController < Devise::SessionsController
  layout "login"
  before_filter :is_active, :only => :create
+ 
 
+ 
  private
  def is_active
   resource_class = build_resource
@@ -13,8 +15,13 @@ class SessionsController < Devise::SessionsController
   else
     return
   end
-  unless !user.nil? and user.state? 
+  if user.nil?
+    return
+  end
+  unless user.state? 
     redirect_to root_path, :alert => "你的帐号还未激活"
   end
  end
+
+
 end

@@ -1,5 +1,6 @@
 class ThesesController < ApplicationController
   before_filter :authenticate_teacher!, :only => ['new', 'create']
+  before_filter :authenticate_teacher_or_student, :only => 'edit'
   # GET /theses
   # GET /theses.json
   def index
@@ -15,6 +16,7 @@ class ThesesController < ApplicationController
   # GET /theses/1.json
   def show
     @thesis = Thesis.find(params[:id])
+    session[:thesis_id] = @thesis.id
 
     respond_to do |format|
       format.html # show.html.erb
@@ -82,7 +84,8 @@ class ThesesController < ApplicationController
       format.json { head :ok }
     end
   end
-  #get /theses/1/download
+
+  #GET /theses/1/download
   def download
     File.new("pdf/thesis#{params[:id]}.pdf","w").close
     DrawPdf.draw(Thesis.find(params[:id]))
@@ -90,10 +93,26 @@ class ThesesController < ApplicationController
     File.delete "pdf/thesis#{params[:id]}.pdf"
   end
 
+  #GET /thesis/1/record
+  def record
+    File.new("pdf/thesis#{params[:id]}_record.pdf","w").close
+    DrawPdf.draw_record(Thesis.find(params[:id]))
+    send_file("pdf/thesis#{params[:id]}_record.pdf")
+    File.delete "pdf/thesis#{params[:id]}_record.pdf"
+  end
+
+  #POST /thesis/1/student
   def student
     thesis = Thesis.find(params[:id])
     thesis.student_id = params[:student]
     thesis.save
     redirect_to student_page_url
+  end
+
+  private
+  def authenticate_teacher_or_student
+    if !(teacher_signed_in? || student_signed_in?)
+      redirect_to root_path
+    end
   end
 end

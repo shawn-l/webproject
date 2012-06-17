@@ -15,7 +15,8 @@
       <th>题目</th>
       <th>专业</th>
       <th>删除</th>
-      <th>下载</th>
+      <th>论文</th>
+      <th>记录</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +25,8 @@
       <td><%= link_to thesis.title, thesis %></td>
       <td><%= thesis.major.name %></td>
       <td><%= link_to "删除", thesis, :method => :delete %></td>
-      <td><%= link_to "下载", url_for(:action => 'download', :controller =>'theses', :id => thesis.id )%></td>
+      <td><%= link_to "导出", download_thesis_path(thesis) %></td>
+      <td><%= link_to "导出", record_thesis_path(thesis) %></td>
     </tr>
   <% end %>
   </tbody>

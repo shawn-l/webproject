@@ -1,0 +1,14 @@
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+   <% if current_student %>
+    <%=   link_to "返回", student_page_path %>
+   <% else %>
+     <%=  link_to "返回", teacher_page_path%>
+   <%end%>
+<% end %>
+<h2>新问题</h2>
+
+<%= render 'form' %>
+

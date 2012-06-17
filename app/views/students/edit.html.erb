@@ -2,9 +2,9 @@
   <h1>论文选题系统</h1>
 <% end %>
 <%= content_for :nav do %>
-  <%= link_to "返回", student_page_path %>
+  <%= nav_link_for_student %>
 <% end %>
 <h2>个人资料</h2>
 
-<%= render 'infoForm' %>
+<%= render 'info_form' %>
 

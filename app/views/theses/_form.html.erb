@@ -1,4 +1,4 @@
-<%= form_for(@thesis) do |f| %>
+<%= form_for(@thesis, :validate => true) do |f| %>
   <% if @thesis.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@thesis.errors.count, "error") %> prohibited this thesis from being saved:</h2>
@@ -23,10 +23,10 @@
   </div>
   <div class="field">
     <%= f.label "简介" %><br />
-    <%= f.kindeditor :summary, :width=>700, :heigh => 300,:resizeType => 0%>
+    <%= f.kindeditor :summary, :width=>700, :heigh => 300,:resizeType => 0, :validate => true%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "新建论文"%>
   </div>
 </fieldset>
 <% end %>

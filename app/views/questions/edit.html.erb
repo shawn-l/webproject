@@ -1,0 +1,11 @@
+<%= content_for :header do %>
+  <h1>论文选题系统</h1>
+<% end %>
+<%= content_for :nav do %>
+  <%= link_to "返回", questions_path %>
+<% end %>
+<h2>编辑问题</h2>
+
+<%= render 'form' %>
+
+<%= link_to '显示', @question %> 

@@ -119,5 +119,9 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-
+.error {
+    text-align: center;
+    color: red;
+    padding-top:5px;
+}
 

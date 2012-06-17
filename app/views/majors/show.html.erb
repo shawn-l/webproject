@@ -11,6 +11,23 @@
   <b>专业名字:</b>
   <%= @major.name %>
 </p>
-
+<table id="data_table" class="display">
+  <thead>
+  <tr>
+    <th>学号</th>
+    <th>姓名</th>
+    <th></th>
+  </tr>
+  </thead> 
+  <tbody>
+  <% @student_informations.each do |student_information| %>
+    <tr>
+      <td><%= student_information.student.stuId %></td>
+      <td><%= student_information.name %></td>
+      <td><%= link_to "显示", student_information.student %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 <%= link_to "编辑", edit_major_path(@major) %> 
